@@ -36,9 +36,6 @@ radial-gradient(circle at top,#112240,#050816 70%);
     z-index:-2;
 }
 
-/* ===============================
-   BACKGROUND GLOW
-==================================*/
 
 body::before{
     content:"";
@@ -180,7 +177,6 @@ animation: cardAppear .8s ease forwards;
 
 }
 
-/* Logo */
 
 .logo{
 
@@ -212,22 +208,15 @@ radial-gradient(circle at top,
     margin-bottom:20px;
 }
 
-/* Text */
+
 
 .exp{
 
-
     opacity:0;
-
     animation:fadeUp .6s .2s forwards;
-
-
     color:#00F0FF;
-
     letter-spacing:3px;
-
     font-size:12px;
-
     margin-bottom:12px;
 }
 
@@ -255,7 +244,7 @@ h1{
     margin-bottom:35px;
 }
 
-/* Inputs */
+
 
 .input-box{
 
@@ -312,7 +301,7 @@ color:#94A3B8;
 letter-spacing:1px;
 }
 
-/* Button */
+
 
 button{
 
@@ -659,5 +648,246 @@ button:hover{
 
 }
 
+
+/* ===============================
+   RESPONSIVE DESIGN
+================================ */
+
+/* Tablets */
+@media (max-width: 900px){
+
+    body{
+        padding:30px 20px;
+        overflow-x:hidden;
+        overflow-y:auto;
+    }
+
+
+    .card-wrapper{
+        width:100%;
+        max-width:420px;
+    }
+
+
+    .card{
+        width:100%;
+        padding:35px 30px;
+    }
+
+
+    h1{
+        font-size:36px;
+    }
+
+}
+
+
+/* Mobile Phones */
+@media (max-width:600px){
+
+
+    body{
+
+        min-height:100svh;
+
+        padding:20px 15px;
+
+        overflow-x:hidden;
+
+        overflow-y:auto;
+
+    }
+
+
+
+    body::before{
+
+        width:350px;
+        height:350px;
+
+        filter:blur(50px);
+
+    }
+
+
+
+    body::after{
+
+        filter:blur(50px);
+
+    }
+
+
+
+    .grid{
+
+        background-size:25px 25px;
+
+    }
+
+
+
+    .card-wrapper{
+
+        width:100%;
+
+        border-radius:22px;
+
+    }
+
+
+
+    .card{
+
+        width:100%;
+
+        padding:30px 20px;
+
+        border-radius:20px;
+
+    }
+
+
+
+    .logo{
+
+        width:75px;
+
+        height:75px;
+
+        font-size:32px;
+
+    }
+
+
+
+    .exp{
+
+        font-size:11px;
+
+        letter-spacing:2px;
+
+    }
+
+
+
+    h1{
+
+        font-size:30px;
+
+        margin-bottom:8px;
+
+    }
+
+
+
+    .subtitle{
+
+        font-size:14px;
+
+        margin-bottom:25px;
+
+    }
+
+
+
+    .input-box{
+
+        padding:13px;
+
+        gap:10px;
+
+    }
+
+
+
+    .input-box input{
+
+        font-size:14px;
+
+    }
+
+
+
+    button{
+
+        padding:14px;
+
+    }
+
+
+
+    .particles span{
+
+        width:3px;
+
+        height:3px;
+
+    }
+
+
+
+}
+
+
+/* Small phones */
+@media(max-width:380px){
+
+
+    .card{
+
+        padding:25px 15px;
+
+    }
+
+
+    h1{
+
+        font-size:26px;
+
+    }
+
+
+    .subtitle{
+
+        font-size:13px;
+
+    }
+
+}
+
+
+@media(max-width:600px){
+
+    body::before,
+    body::after,
+    .card-wrapper{
+
+        animation-duration:15s;
+
+    }
+
+
+    .card:hover::before{
+
+        display:none;
+
+    }
+
+
+    button:hover{
+
+        transform:none;
+
+    }
+
+
+    .card:hover{
+
+        transform:none;
+
+    }
+
+}
 
 

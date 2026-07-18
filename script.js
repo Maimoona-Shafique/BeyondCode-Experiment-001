@@ -7,7 +7,6 @@ const button = document.getElementById("loginBtn");
 const status = document.getElementById("status");
 const scanLine = document.querySelector(".scan-line");
 
-// ===== Card Tilt =====
 card.addEventListener("mousemove", (e) => {
 
     const rect = card.getBoundingClientRect();
@@ -36,7 +35,7 @@ card.addEventListener("mouseleave", () => {
 
 });
 
-// ===== Login =====
+
 
 button.addEventListener("click", () => {
 
