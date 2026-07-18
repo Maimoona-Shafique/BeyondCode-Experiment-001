@@ -1,0 +1,663 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Space Grotesk',sans-serif;
+}
+
+body{
+    min-height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:
+radial-gradient(circle at top,#112240,#050816 70%);
+
+    overflow:hidden;
+}
+
+/* Background Grid */
+
+.grid{
+
+    position:fixed;
+    inset:0;
+
+    background-image:
+
+    linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),
+
+    linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);
+
+    background-size:40px 40px;
+
+    z-index:-2;
+}
+
+/* ===============================
+   BACKGROUND GLOW
+==================================*/
+
+body::before{
+    content:"";
+
+    position:fixed;
+
+    width:700px;
+    height:700px;
+
+    background:radial-gradient(circle,
+    rgba(0,240,255,.18),
+    transparent 70%);
+
+    left:50%;
+    top:50%;
+
+    transform:translate(-50%,-50%);
+
+    filter:blur(70px);
+
+    animation: glowMove 8s ease-in-out infinite;
+
+    z-index:-3;
+}
+
+@keyframes glowMove{
+
+    0%,100%{
+        transform:translate(-50%,-50%) scale(1);
+    }
+
+    50%{
+        transform:translate(-50%,-50%) scale(1.15);
+    }
+
+}
+
+body::after{
+
+    content:"";
+
+    position:fixed;
+
+    inset:0;
+
+    background:
+    radial-gradient(circle at 20% 20%,
+    rgba(0,240,255,.12),
+    transparent 35%),
+
+    radial-gradient(circle at 80% 80%,
+    rgba(124,58,237,.12),
+    transparent 35%);
+
+    filter:blur(80px);
+
+    animation:aurora 10s infinite alternate ease-in-out;
+
+    z-index:-4;
+
+}
+
+@keyframes aurora{
+
+    from{
+
+        transform:translate(-30px,-20px);
+
+    }
+
+    to{
+
+        transform:translate(30px,20px);
+
+    }
+
+}
+
+
+/* Card */
+
+.card{
+
+    width:420px;
+
+    padding:45px;
+
+    border-radius:28px;
+
+   background:rgba(12,18,35,.55);
+backdrop-filter:blur(25px);
+-webkit-backdrop-filter:blur(25px);
+
+border:1px solid rgba(255,255,255,.12);
+
+    backdrop-filter:blur(18px);
+box-shadow:
+0 15px 40px rgba(0,0,0,.35),
+0 0 30px rgba(0,240,255,.18);
+outline:1px solid rgba(255,255,255,.05);
+    text-align:center;
+
+    transition:.4s;
+
+opacity:0;
+
+transform:translateY(50px) scale(.95);
+
+position: relative;
+overflow: hidden;
+transform-style: preserve-3d;
+animation: cardAppear .8s ease forwards;
+
+
+    display:flex;
+    flex-direction:column;
+
+
+
+}
+
+@keyframes cardAppear{
+
+    from{
+        opacity:0;
+        transform:translateY(50px) scale(.95);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0) scale(1);
+    }
+
+}
+.card:hover{
+
+    box-shadow:
+    0 0 80px rgba(0,240,255,.25);
+
+}
+
+/* Logo */
+
+.logo{
+
+
+    opacity:0;
+
+    animation:fadeUp .6s forwards;
+
+
+    width:90px;
+    height:90px;
+
+    margin:auto;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    border-radius:50%;
+    background:
+radial-gradient(circle at top,
+#22D3EE,
+#7C3AED);
+
+    color:white;
+
+    font-size:40px;
+
+    margin-bottom:20px;
+}
+
+/* Text */
+
+.exp{
+
+
+    opacity:0;
+
+    animation:fadeUp .6s .2s forwards;
+
+
+    color:#00F0FF;
+
+    letter-spacing:3px;
+
+    font-size:12px;
+
+    margin-bottom:12px;
+}
+
+h1{
+    opacity:0;
+
+    animation:fadeUp .6s .4s forwards;
+
+
+    color:white;
+
+    font-size:42px;
+
+    margin-bottom:10px;
+}
+
+.subtitle{
+
+    opacity:0;
+
+    animation:fadeUp .6s .6s forwards;
+
+    color:#9CA3AF;
+
+    margin-bottom:35px;
+}
+
+/* Inputs */
+
+.input-box{
+
+    display:flex;
+    align-items:center;
+
+    gap:12px;
+
+    margin-bottom:18px;
+
+    padding:15px;
+
+    border:1px solid rgba(255,255,255,.1);
+
+    border-radius:14px;
+
+    transition:.3s;
+}
+.input-box:focus-within{
+
+    border-color:#00F0FF;
+
+    box-shadow:
+    0 0 20px rgba(0,240,255,.25);
+
+    transform:translateY(-2px);
+
+}
+
+.input-box i{
+
+    color:#00F0FF;
+
+    font-size:18px;
+}
+
+.input-box input{
+
+    width:100%;
+
+    background:none;
+
+    border:none;
+
+    outline:none;
+
+    color:white;
+
+    font-size:15px;
+}
+
+.input-box input::placeholder{
+color:#94A3B8;
+letter-spacing:1px;
+}
+
+/* Button */
+
+button{
+
+    width:100%;
+
+    margin-top:15px;
+
+    padding:16px;
+
+    border:none;
+
+    border-radius:14px;
+
+    background:linear-gradient(90deg,#00F0FF,#7C3AED);
+
+    color:white;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.35s;
+
+
+    position:relative;
+
+    overflow:hidden;
+    opacity:0;
+
+    animation:fadeUp .6s 1.2s forwards;
+
+
+}
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:
+        translateY(20px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+        translateY(0);
+
+    }
+
+}
+
+
+
+
+button::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:-120%;
+
+    top:0;
+
+    width:60%;
+
+    height:100%;
+
+    background:rgba(255,255,255,.3);
+
+    transform:skewX(-25deg);
+
+}
+
+button:hover::before{
+
+    animation:shine .8s;
+
+}
+
+@keyframes shine{
+
+    to{
+
+        left:160%;
+
+    }
+
+}
+
+
+button:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:0 12px 30px rgba(0,240,255,.35);
+
+}
+
+/* ===============================
+   PARTICLES
+==================================*/
+
+.particles{
+    position:fixed;
+    inset:0;
+    overflow:hidden;
+    z-index:-1;
+}
+
+.particles span{
+
+    position:absolute;
+
+    width:5px;
+    height:5px;
+
+    background:#00F0FF;
+
+    border-radius:50%;
+
+    box-shadow:0 0 12px #00F0FF;
+
+    animation: float 12s linear infinite;
+
+}
+
+/* Position each particle */
+
+.particles span:nth-child(1){left:10%;animation-duration:12s;}
+.particles span:nth-child(2){left:20%;animation-duration:9s;}
+.particles span:nth-child(3){left:35%;animation-duration:14s;}
+.particles span:nth-child(4){left:50%;animation-duration:11s;}
+.particles span:nth-child(5){left:65%;animation-duration:15s;}
+.particles span:nth-child(6){left:78%;animation-duration:10s;}
+.particles span:nth-child(7){left:90%;animation-duration:13s;}
+.particles span:nth-child(8){left:95%;animation-duration:8s;}
+
+@keyframes float{
+
+    from{
+
+        transform:translateY(110vh);
+
+        opacity:0;
+
+    }
+
+    20%{
+
+        opacity:1;
+
+    }
+
+    80%{
+
+        opacity:1;
+
+    }
+
+    to{
+
+        transform:translateY(-20vh);
+
+        opacity:0;
+
+    }
+
+}
+
+.card-glow{
+
+    position:absolute;
+
+    width:250px;
+    height:250px;
+
+    border-radius:50%;
+
+    background:radial-gradient(circle,
+    rgba(0,240,255,.35),
+    transparent 70%);
+
+    pointer-events:none;
+
+    left:50%;
+    top:50%;
+
+    transform:translate(-50%,-50%);
+
+    filter:blur(25px);
+
+    opacity:.5;
+
+    transition:
+    left .1s,
+    top .1s;
+
+}
+
+.card::before{
+    content:"";
+
+    position:absolute;
+
+    top:-150%;
+    left:-40%;
+
+    width:80%;
+    height:300%;
+
+    background:linear-gradient(
+        rgba(255,255,255,.15),
+        transparent
+    );
+
+    transform:rotate(25deg);
+
+    transition:.8s;
+}
+
+.card:hover::before{
+    left:150%;
+}
+
+.card-wrapper{
+
+    padding:2px;
+
+    border-radius:30px;
+
+    background:linear-gradient(
+        45deg,
+        #00F0FF,
+        #7C3AED,
+        #00F0FF
+    );
+
+    background-size:300%;
+
+    animation:borderMove 6s linear infinite;
+
+    box-shadow:
+        0 0 40px rgba(0,240,255,.15);
+
+    
+}
+
+@keyframes borderMove{
+
+    0%{
+        background-position:0%;
+    }
+
+    100%{
+        background-position:300%;
+    }
+
+}
+
+
+.scan-line{
+    position:absolute;
+    left:0;
+    top:-10%;
+
+    width:100%;
+    height:3px;
+
+    background:linear-gradient(
+        90deg,
+        transparent,
+        #00F0FF,
+        transparent
+    );
+
+    box-shadow:0 0 25px #00F0FF;
+
+    animation:scan 4s linear infinite;
+}
+
+@keyframes scan{
+
+    0%{
+        top:-10%;
+    }
+
+    100%{
+        top:110%;
+    }
+
+}
+
+
+.input1{
+    opacity:0;
+    animation:fadeUp .6s .8s forwards;
+}
+
+.input2{
+    opacity:0;
+    animation:fadeUp .6s 1s forwards;
+}
+
+#status{
+    margin-top:20px;
+    font-size:15px;
+    font-weight:600;
+    letter-spacing:2px;
+    text-align:center;
+    min-height:24px;
+    color:#00F0FF;
+}
+
+.success{
+    color:#00ff88;
+    text-shadow:0 0 15px #00ff88;
+}
+
+.error{
+    color:#ff3b5c;
+    text-shadow:0 0 15px #ff3b5c;
+}
+
+.shake{
+    animation:shake .4s;
+}
+
+@keyframes shake{
+
+    0%{transform:translateX(0);}
+    20%{transform:translateX(-8px);}
+    40%{transform:translateX(8px);}
+    60%{transform:translateX(-8px);}
+    80%{transform:translateX(8px);}
+    100%{transform:translateX(0);}
+
+}
+
+
+
