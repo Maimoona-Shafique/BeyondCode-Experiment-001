@@ -17,7 +17,8 @@ A frontend experiment project built to explore modern web design, responsive lay
 
 ## 📸 Preview
 
-(Add screenshot here)
+
+![Project Preview](assets/project-preview.png)
 
 ## 📂 Project Structure
 
