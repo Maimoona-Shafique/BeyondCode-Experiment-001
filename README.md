@@ -21,7 +21,13 @@ A frontend experiment project built to explore modern web design, responsive lay
 
 ## 📂 Project Structure
 
-
+BeyondCode-Experiment-001
+│
+├── assets
+│ └── logo.png
+├── index.html
+├── style.css
+└── script.js
 
 ## 👩‍💻 Author
 
